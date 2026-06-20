@@ -1,0 +1,93 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #08080a;
+  --color-foreground: #f4f1ea;
+  --color-primary: #c5a059;
+  --color-primary-dark: #8e6d3a;
+  --color-accent: #3e2f5b;
+  --color-border: rgba(197, 160, 89, 0.2);
+  --color-muted: #1a1a1f;
+  --color-muted-foreground: rgba(244, 241, 234, 0.6);
+
+  --font-display: "Cinzel Decorative", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-card: var(--color-muted);
+  --color-card-foreground: var(--color-foreground);
+  --color-popover: var(--color-muted);
+  --color-popover-foreground: var(--color-foreground);
+  --color-primary-foreground: var(--color-background);
+  --color-secondary: var(--color-accent);
+  --color-secondary-foreground: var(--color-foreground);
+  --color-accent-foreground: var(--color-foreground);
+  --color-destructive: #b3261e;
+  --color-destructive-foreground: var(--color-foreground);
+  --color-input: var(--color-border);
+  --color-ring: var(--color-primary);
+  --color-ring-offset-background: var(--color-background);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-12px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes card-flip {
+  0% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@utility gold-gradient {
+  background: linear-gradient(90deg, #8e6d3a 0%, #f4f1ea 50%, #c5a059 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@utility card-fan-1 { --r: -14deg; }
+@utility card-fan-2 { --r: 0deg; }
+@utility card-fan-3 { --r: 14deg; }
+
+@utility animate-float-card {
+  animation: float-card 5s ease-in-out infinite;
+}
+
+@utility animate-fade-up {
+  animation: fade-in-up 0.8s ease-out both;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  ::selection {
+    background-color: rgba(197, 160, 89, 0.3);
+    color: var(--color-foreground);
+  }
+}
