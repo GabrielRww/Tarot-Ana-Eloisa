@@ -8,7 +8,7 @@ import cardLovers from "@/assets/card-lovers.jpg";
 import cardWheel from "@/assets/card-wheel.jpg";
 import cardPriestess from "@/assets/card-priestess.jpg";
 import galleryTable from "@/assets/gallery-table.jpg";
-import anaEloisaAsset from "@/assets/ana-eloisa.png.asset.json";
+import anaEloisa from "@/assets/ana-eloisa.png";
 
 const WHATSAPP_NUMBER = "5554991299549";
 const WHATSAPP_DISPLAY = "+55 54 99129-9549";
@@ -428,7 +428,7 @@ function Gallery() {
           className="aspect-[3/4] object-cover rounded-sm ring-1 ring-white/5 w-full"
         />
         <img
-          src={anaEloisaAsset.url}
+          src={anaEloisa}
           alt="Ana Eloisa, cartomante"
           width={768}
           height={1024}
