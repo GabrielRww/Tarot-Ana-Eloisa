@@ -10,8 +10,8 @@ import cardPriestess from "@/assets/card-priestess.jpg";
 import galleryTable from "@/assets/gallery-table.jpg";
 import anaEloisa from "@/assets/ana-eloisa.png";
 
-const WHATSAPP_NUMBER = "5554991299549";
-const WHATSAPP_DISPLAY = "+55 54 99129-9549";
+const WHATSAPP_NUMBER = "555494264315";
+const WHATSAPP_DISPLAY = "+55 54 9426-4315";
 const WHATSAPP_URL = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
